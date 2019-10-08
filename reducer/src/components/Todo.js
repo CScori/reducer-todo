@@ -1,25 +1,23 @@
 import React, { useState, useReducer } from 'react'
-
+import TodoForm from './TodoForm'
 import { initialState, reducer } from '../Reducer/TodoReducer'
 
-const todo = () => {
-    const [{ name, completed, id }, dispatch] = useReducer(reducer, initialState);
 
+const todo = () => {
+    
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+   
+
+    
     return (
-        <div key={id}>
-            <h2>{name}</h2>
+        <div>
             <div>
-                {!completed ? (
-                    <button>To Done</button>
-                ): (
-                    <div>
-                        <input>
-                        </input>
-                    </div>
-                )};
 
             </div>
-
+            <div className='new todo'>
+                    <TodoForm dispatch={dispatch}/>
+            </div>
         </div>
     )
 }
