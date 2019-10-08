@@ -19,7 +19,12 @@ export const reducer = (state, action) => {
 
             return {
                 ...state,
-            tasks: [...state.tasks. newTodo]
+            tasks: [...state.tasks, newTodo]
+            }
+        case 'TOGGLE_COMPLETED':
+            return {
+                ...state,
+                completed: true,
             }
         default:
             return state;
