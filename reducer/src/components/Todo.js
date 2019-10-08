@@ -1,7 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useReducer} from 'react'
+
+import {initialState, reducer} from '../Reducer/TodoReducer'
 
 const todo = () => {
-    
+    const [{  }, dispatch] = useReducer(reducer, initialState);
+    const [newTodo, setNewTodo] = useState('');
     return (
         <div>
             
