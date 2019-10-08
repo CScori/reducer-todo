@@ -1,16 +1,25 @@
-import React, {useState, useReducer} from 'react'
+import React, { useState, useReducer } from 'react'
 
-import {initialState, reducer} from '../Reducer/TodoReducer'
+import { initialState, reducer } from '../Reducer/TodoReducer'
 
 const todo = () => {
-    const [{  }, dispatch] = useReducer(reducer, initialState);
-    const [newTodo, setNewTodo] = useState('');
+    const [{ name, completed, id }, dispatch] = useReducer(reducer, initialState);
+
     return (
-        <div>
-            
-  item: 'Learn about reducers',
-  completed: false,
-  id: 3892987589
+        <div key={id}>
+            <h2>{name}</h2>
+            <div>
+                {!completed ? (
+                    <button>To Done</button>
+                ): (
+                    <div>
+                        <input>
+                        </input>
+                    </div>
+                )};
+
+            </div>
+
         </div>
     )
 }
