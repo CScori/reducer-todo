@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const TodoForm = (dispatch) => {
+const TodoForm = ({dispatch}) => {
     const [todo, setTodo] = useState({});
     const handleChanges = e => {
         setTodo(e.target.value)
